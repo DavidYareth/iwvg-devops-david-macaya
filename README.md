@@ -11,3 +11,4 @@
 
 ### Estado del código
 [![DevOps](https://github.com/DavidYareth/iwvg-devops-david-macaya/actions/workflows/tests-sonar.yml/badge.svg)](https://github.com/DavidYareth/iwvg-devops-david-macaya/actions/workflows/tests-sonar.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=DavidYareth_iwvg-devops-david-macaya&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=DavidYareth_iwvg-devops-david-macaya)
