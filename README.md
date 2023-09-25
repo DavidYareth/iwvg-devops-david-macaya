@@ -10,4 +10,4 @@
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/DavidYareth/iwvg-devops-david-macaya?color=informational)
 
 ### Estado del código
-[![DevOps](https://github.com/DavidYareth/iwvg-devops-david-macaya/actions/workflows/test-sonar.yml/badge.svg)](https://github.com/DavidYareth/iwvg-devops-david-macaya/actions/workflows/test-sonar.yml)
+[![DevOps](https://github.com/DavidYareth/iwvg-devops-david-macaya/actions/workflows/tests-sonar.yml/badge.svg)](https://github.com/DavidYareth/iwvg-devops-david-macaya/actions/workflows/tests-sonar.yml)
