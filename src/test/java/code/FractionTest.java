@@ -57,6 +57,58 @@ class FractionTest {
     }
 
     @Test
+    void testIsProper() {
+        assertTrue(fraction.isProper());
+
+        fraction.setNumerator(4);
+        fraction.setDenominator(3);
+        assertFalse(fraction.isProper());
+    }
+
+    @Test
+    void testIsImproper() {
+        assertFalse(fraction.isImproper());
+
+        fraction.setNumerator(4);
+        fraction.setDenominator(3);
+        assertTrue(fraction.isImproper());
+    }
+
+    @Test
+    void testIsEquivalent() {
+        Fraction equivalentFraction = new Fraction(4, 6);
+        assertTrue(fraction.isEquivalent(equivalentFraction));
+
+        Fraction nonEquivalentFraction = new Fraction(3, 5);
+        assertFalse(fraction.isEquivalent(nonEquivalentFraction));
+    }
+
+    @Test
+    void testAdd() {
+        Fraction anotherFraction = new Fraction(1, 3);
+        Fraction result = Fraction.add(fraction, anotherFraction);
+
+        assertEquals(3, result.getNumerator()); // 2/3 + 1/3 = 3/3 = 1
+        assertEquals(3, result.getDenominator());
+
+        anotherFraction = new Fraction(1, 4);
+        result = Fraction.add(fraction, anotherFraction);
+
+        assertEquals(11, result.getNumerator()); // 2/3 + 1/4 = 11/12
+        assertEquals(12, result.getDenominator());
+    }
+
+
+    @Test
+    void testMultiply() {
+        Fraction anotherFraction = new Fraction(2, 5);
+        Fraction result = Fraction.multiply(fraction, anotherFraction);
+
+        assertEquals(4, result.getNumerator());
+        assertEquals(15, result.getDenominator());
+    }
+
+    @Test
     void testToString() {
         assertEquals("Fraction{numerator=2, denominator=3}", fraction.toString());
     }
