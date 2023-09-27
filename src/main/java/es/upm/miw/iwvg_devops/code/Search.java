@@ -28,4 +28,11 @@ public class Search {
                 .filter(user -> user.getFractions().stream().anyMatch(Fraction::isProper))
                 .map(user -> user.getFamilyName().charAt(0) + ".");
     }
+
+    public Fraction findFractionDivisionByUserId(String id) {
+        return this.usersDatabase.findAll()
+                .filter(user -> user.getId().equals(id))
+                .flatMap(user -> user.getFractions().stream())
+                .reduce(Fraction::divide).orElse(null);
+    }
 }
