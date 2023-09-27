@@ -1,5 +1,6 @@
 package es.upm.miw.iwvg_devops.code;
 
+import java.util.Comparator;
 import java.util.stream.Stream;
 
 public class Search {
@@ -13,6 +14,13 @@ public class Search {
     public Stream<String> findUserIdByAllProperFraction() {
         return usersDatabase.findAll().filter(user -> user.getFractions().stream()
                 .allMatch(Fraction::isProper)).map(User::getId);
+    }
+
+    public Fraction findHighestFraction() {
+        return this.usersDatabase.findAll()
+                .flatMap(user -> user.getFractions().stream())
+                .max(Comparator.comparing(Fraction::decimal))
+                .orElse(null);
     }
 
 }
