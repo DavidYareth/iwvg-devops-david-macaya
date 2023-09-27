@@ -1,5 +1,6 @@
 package code;
 
+import es.upm.miw.iwvg_devops.code.Fraction;
 import org.junit.jupiter.api.BeforeEach;
 import es.upm.miw.iwvg_devops.code.Search;
 import org.junit.jupiter.api.Test;
@@ -30,5 +31,12 @@ public class SearchTest {
         var initials = search.findUserFamilyNameInitialBySomeProperFraction().toList();
         assertTrue(initials.contains("F."));
         assertTrue(initials.contains("B."));
+    }
+
+    @Test
+    void testFindFractionDivisionByUserId() {
+        Fraction result = search.findFractionDivisionByUserId("1");
+        assertEquals(0, result.getNumerator());
+        assertEquals(2, result.getDenominator());
     }
 }
