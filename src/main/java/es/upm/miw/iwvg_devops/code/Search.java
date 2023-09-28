@@ -19,6 +19,7 @@ public class Search {
     public Fraction findHighestFraction() {
         return this.usersDatabase.findAll()
                 .flatMap(user -> user.getFractions().stream())
+                .filter(fraction -> fraction.getDenominator() != 0) // Filter out fractions with a denominator of 0
                 .max(Comparator.comparing(Fraction::decimal))
                 .orElse(null);
     }
@@ -26,7 +27,7 @@ public class Search {
     public Stream<String> findUserFamilyNameInitialBySomeProperFraction() {
         return this.usersDatabase.findAll()
                 .filter(user -> user.getFractions().stream().anyMatch(Fraction::isProper))
-                .map(user -> user.getFamilyName().charAt(0) + ".");
+                .map(user -> user.getFamilyName().substring(0, 1) + ".");
     }
 
     public Fraction findFractionDivisionByUserId(String id) {
