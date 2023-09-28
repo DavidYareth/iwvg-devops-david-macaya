@@ -27,6 +27,14 @@ public class SearchTest {
     }
 
     @Test
+    void testFindHighestFraction () {
+        Fraction result = search.findHighestFraction();
+        System.out.println(result.getNumerator() + " " + result.getDenominator());
+        assertEquals(2, result.getNumerator());
+        assertEquals(1, result.getDenominator());
+    }
+
+    @Test
     void testFindUserFamilyNameInitialBySomeProperFraction() {
         String initials = search.findUserFamilyNameInitialBySomeProperFraction().toList().toString();
         assertTrue(initials.contains("F."));

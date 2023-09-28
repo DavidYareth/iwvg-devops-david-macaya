@@ -19,6 +19,7 @@ public class Search {
     public Fraction findHighestFraction() {
         return this.usersDatabase.findAll()
                 .flatMap(user -> user.getFractions().stream())
+                .filter(fraction -> fraction.getDenominator() != 0) // Filter out fractions with a denominator of 0
                 .max(Comparator.comparing(Fraction::decimal))
                 .orElse(null);
     }
