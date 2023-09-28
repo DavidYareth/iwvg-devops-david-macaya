@@ -28,7 +28,7 @@ public class SearchTest {
 
     @Test
     void testFindUserFamilyNameInitialBySomeProperFraction() {
-        var initials = search.findUserFamilyNameInitialBySomeProperFraction().toList();
+        String initials = search.findUserFamilyNameInitialBySomeProperFraction().toList().toString();
         assertTrue(initials.contains("F."));
         assertTrue(initials.contains("B."));
     }

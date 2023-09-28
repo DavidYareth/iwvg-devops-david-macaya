@@ -26,7 +26,7 @@ public class Search {
     public Stream<String> findUserFamilyNameInitialBySomeProperFraction() {
         return this.usersDatabase.findAll()
                 .filter(user -> user.getFractions().stream().anyMatch(Fraction::isProper))
-                .map(user -> user.getFamilyName().charAt(0) + ".");
+                .map(user -> user.getFamilyName().substring(0, 1) + ".");
     }
 
     public Fraction findFractionDivisionByUserId(String id) {
